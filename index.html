@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <div class="container">
+    <div >
+        <p id="output"></p>
+
+    </div>
+   
+   <form>
+    <div class="label">
+        <label for="student-name">Student's Name : </label>
+        <input type="text"  class="input"  id ="student-name" placeholder="name"> 
+    </div>
+    <div class="label">
+        <label for="level"> Student's Level : &nbsp </label>
+        <input type="text" id ="level" placeholder="level" class="input">
+    </div>
+    <div class="label">
+        <label for="score"> Student's Score :&nbsp</label>
+        <input type="text"  id="score"  class="input" oninput=getScore() placeholder="score">
+    </div>
+    
+   </form>
+    </div>
+
+    <div>
+        <p>
+            Parameters include: <br> student'name - shenboss <br>
+                                Level - 500L <br>
+                                Score - 57
+        </p>
+    </div>
+
+    <script>
+
+
+          let name = "shenboss"
+          let level = "500L"
+          let score = 57
+          
+          
+         function getScore(){
+ let score = document.getElementById('score').value;
+ let name = document.getElementById('student-name').value;
+ let level = document.getElementById('level').value;
+
+if(name == "shenboss" && level == "500L" && score== 57 ){
+            document.getElementById('output').innerHTML="Hello!!! My name is " + name + " I am in " + level + " and I got " + score + " Well, " + validate(); 
+         }
+         
+
+         function validate(){
+        if(score >= 70 && score <= 100){
+      return ('My grade is A')
+  }else if(score >= 60 && score <= 69){
+       return ('My grade is B')
+  }else if(score >= 50 && score <= 59){
+        return('My grade is C')
+   }else if(score >= 45 && score <= 49){
+      return ('My grade is D')
+  }else if(score >= 40 && score <= 44){
+       return('My grade is E')}
+      }
+
+        }
+      
+
+
+       
+    </script>
+</body>
+</html>
